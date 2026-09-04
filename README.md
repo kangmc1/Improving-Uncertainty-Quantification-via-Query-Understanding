@@ -37,7 +37,7 @@ LLM의 **불확실성 정량화(Uncertainty Quantification, UQ)** 지표로 오�
         (모델이 아는 질문)                (모델이 헷갈리는 질문)
                     │                               │
             greedy 답변 그대로            4. RAG / Recitation 프롬프트로
-                                             선택적 재생성
+                                             **선택적 재생성** → 재채점
 ```
 
 ## 2. 저장소 구조
@@ -47,7 +47,6 @@ LLM의 **불확실성 정량화(Uncertainty Quantification, UQ)** 지표로 오�
 ├── uq_paths.py         모든 입출력 경로의 단일 소스 (환경변수로 override)
 ├── requirements.txt    실제로 import 되는 패키지만 추린 목록
 ├── environment.yaml    원 실험 conda 환경 스냅샷 (Python 3.12 / CUDA 12.1)
-├── .env.example        토큰 · 경로 환경변수 템플릿
 │
 ├── vllm_pipeline/      파이프라인 전체 (생성 · 평가 · 재생성 · 분석)
 │   ├── models.py       모델 레지스트리 (repo · temperature · 토큰 패턴)
@@ -75,9 +74,8 @@ pip install -r requirements.txt
 ### 환경변수
 
 ```bash
-cp .env.example .env
-# .env 편집 후
-set -a && . ./.env && set +a
+export HF_TOKEN=hf_...                          # 필수
+export UQ_RESULTS_DIR=/mnt/data/uq_results      # 선택: 산출물을 저장소 밖에 둘 때
 ```
 
 | 변수 | 용도 | 기본값 |
