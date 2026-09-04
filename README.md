@@ -37,7 +37,7 @@ LLM의 **불확실성 정량화(Uncertainty Quantification, UQ)** 지표로 오�
         (모델이 아는 질문)                (모델이 헷갈리는 질문)
                     │                               │
             greedy 답변 그대로            4. RAG / Recitation 프롬프트로
-                                             **선택적 재생성** → 재채점
+                                             선택적 재생성
 ```
 
 ## 2. 저장소 구조
