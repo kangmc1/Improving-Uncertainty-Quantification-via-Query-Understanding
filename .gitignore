@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------- Python
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------- 비밀정보
+.env
+.env.local
+*.key
+secrets.*
+
+# ------------------------------------------------- 대용량 산출물 / 데이터
+# 이 저장소는 "코드만" 담는다.
+# 디렉터리 자체를 제외하면 하위 재포함(!)이 동작하지 않으므로 results/* 로 적는다.
+/results/*
+!/results/README.md
+
+data/
+dev_results/
+ablation_results/
+uq_results/
+double_loop/
+single_kig/
+post_processed/
+not_post_processed/
+
+*.pkl
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.npy
+*.npz
+*.arrow
+*.parquet
+*.tsv
+*.csv
+
+# ---------------------------------------------------------------- 모델 / 외부 저장소
+models/
+checkpoint-*/
+/third_party/DPR/
+/third_party/SAR/
+
+# ---------------------------------------------------------------- 실험 로깅
+wandb/
+runs/
+logs/
+*.log
+nohup.out
+
+# ---------------------------------------------------------------- 기타
+.DS_Store
+.vscode/
+.idea/
+*.swp
+.omc/
