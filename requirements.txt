@@ -1,0 +1,32 @@
+# 실제로 import 하는 패키지만 추린 목록. 전체 환경은 environment.yaml 을 쓴다.
+# torch / vllm 은 CUDA 빌드에 맞는 휠을 먼저 설치하는 것을 권장한다.
+#   pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+
+# --- 생성 / 추론 ---------------------------------------------------------
+torch==2.4.0
+vllm==0.6.3.post1
+transformers==4.46.2
+sentencepiece==0.2.0
+
+# --- 데이터셋 / 채점 -----------------------------------------------------
+datasets==3.0.0
+evaluate==0.4.3
+rouge-score==0.1.2
+nltk==3.9.1
+absl-py==2.1.0
+
+# --- 불확실성 정량화 (semantic entropy / SAR) ----------------------------
+sentence-transformers==3.3.1
+scikit-learn==1.5.2
+scipy==1.14.1
+numpy==1.26.4
+pandas==2.2.2
+
+# --- 시각화 / 유틸 -------------------------------------------------------
+matplotlib==3.9.2
+tqdm==4.66.5
+regex
+
+# --- 선택: DPR 패시지 인덱싱 (vllm_pipeline/psg_generator.py) ------------
+# conda install -c pytorch faiss-gpu     # 또는
+# faiss-cpu
